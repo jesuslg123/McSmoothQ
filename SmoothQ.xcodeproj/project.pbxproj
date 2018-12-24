@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		EA2F699921D0DA8A002892E8 /* SmoothQManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F699821D0DA8A002892E8 /* SmoothQManager.swift */; };
 		EA2F699D21D129CA002892E8 /* BluetoothHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F699C21D129CA002892E8 /* BluetoothHelper.swift */; };
-		EA2F69A221D129F6002892E8 /* GymbalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F69A121D129F6002892E8 /* GymbalViewController.swift */; };
+		EA2F69A221D129F6002892E8 /* GimbalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F69A121D129F6002892E8 /* GimbalViewController.swift */; };
 		EAE4C98A21D0161B009C200A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4C98921D0161B009C200A /* AppDelegate.swift */; };
 		EAE4C98C21D0161B009C200A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4C98B21D0161B009C200A /* ViewController.swift */; };
 		EAE4C98E21D01622009C200A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE4C98D21D01622009C200A /* Assets.xcassets */; };
@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		EA2F699821D0DA8A002892E8 /* SmoothQManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmoothQManager.swift; sourceTree = "<group>"; };
 		EA2F699C21D129CA002892E8 /* BluetoothHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BluetoothHelper.swift; path = SmoothQ/Bluetooth/BluetoothHelper.swift; sourceTree = SOURCE_ROOT; };
-		EA2F69A121D129F6002892E8 /* GymbalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GymbalViewController.swift; path = SmoothQ/GymbalView/GymbalViewController.swift; sourceTree = SOURCE_ROOT; };
+		EA2F69A121D129F6002892E8 /* GimbalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GimbalViewController.swift; path = SmoothQ/GymbalView/GimbalViewController.swift; sourceTree = SOURCE_ROOT; };
 		EAE4C98621D0161B009C200A /* SmoothQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmoothQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE4C98921D0161B009C200A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE4C98B21D0161B009C200A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,20 +43,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EA2F699721D0DA76002892E8 /* Gymbal */ = {
+		EA2F699721D0DA76002892E8 /* Gimbal */ = {
 			isa = PBXGroup;
 			children = (
 				EA2F699821D0DA8A002892E8 /* SmoothQManager.swift */,
 			);
-			path = Gymbal;
+			path = Gimbal;
 			sourceTree = "<group>";
 		};
-		EA2F69A021D129EA002892E8 /* GymbalView */ = {
+		EA2F69A021D129EA002892E8 /* GimbalView */ = {
 			isa = PBXGroup;
 			children = (
-				EA2F69A121D129F6002892E8 /* GymbalViewController.swift */,
+				EA2F69A121D129F6002892E8 /* GimbalViewController.swift */,
 			);
-			name = GymbalView;
+			name = GimbalView;
 			path = "New Group";
 			sourceTree = "<group>";
 		};
@@ -80,8 +80,8 @@
 		EAE4C98821D0161B009C200A /* SmoothQ */ = {
 			isa = PBXGroup;
 			children = (
-				EA2F69A021D129EA002892E8 /* GymbalView */,
-				EA2F699721D0DA76002892E8 /* Gymbal */,
+				EA2F69A021D129EA002892E8 /* GimbalView */,
+				EA2F699721D0DA76002892E8 /* Gimbal */,
 				EAE4C98921D0161B009C200A /* AppDelegate.swift */,
 				EAE4C98B21D0161B009C200A /* ViewController.swift */,
 				EAE4C98D21D01622009C200A /* Assets.xcassets */,
@@ -189,7 +189,7 @@
 				EA2F699921D0DA8A002892E8 /* SmoothQManager.swift in Sources */,
 				EA2F699D21D129CA002892E8 /* BluetoothHelper.swift in Sources */,
 				EAE4C98A21D0161B009C200A /* AppDelegate.swift in Sources */,
-				EA2F69A221D129F6002892E8 /* GymbalViewController.swift in Sources */,
+				EA2F69A221D129F6002892E8 /* GimbalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

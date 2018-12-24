@@ -843,10 +843,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
-        <!--Gymbal View Controller-->
+        <!--Gimbal View Controller-->
         <scene sceneID="kld-la-JkI">
             <objects>
-                <viewController identifier="GymbalViewController" storyboardIdentifier="GymbalViewController" id="Luo-1A-WfX" customClass="GymbalViewController" customModule="SmoothQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController identifier="GymbalViewController" storyboardIdentifier="GymbalViewController" id="Luo-1A-WfX" customClass="GimbalViewController" customModule="SmoothQ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="hBd-31-Ncm">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>

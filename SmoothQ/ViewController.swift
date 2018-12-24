@@ -35,9 +35,9 @@ class ViewController: NSViewController {
         b?.currentState == BluetoothHelper.State.idle ? b?.scan() : b?.stop()
     }
     
-    func openGymbalView(device:CBPeripheral) {
+    func openGimbalView(device:CBPeripheral) {
         let mainStoryBoard = NSStoryboard(name: "Main", bundle: nil)
-        let windowController = mainStoryBoard.instantiateController(withIdentifier: "GymbalViewController") as! GymbalViewController
+        let windowController = mainStoryBoard.instantiateController(withIdentifier: "GymbalViewController") as! GimbalViewController
         windowController.setup(device: device)
         presentAsModalWindow(windowController)
         windowController.becomeFirstResponder()
@@ -72,7 +72,7 @@ extension ViewController: BluetoothHelperDelegate {
     func bluetoothHelperDidDiscoverCharacteristics(sender: BluetoothHelper, device: CBPeripheral) {
         print("Ready!")
         if (device.name == "Smooth-Q01BC") {
-            openGymbalView(device: device)
+            openGimbalView(device: device)
         }
     }
 }
