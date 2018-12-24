@@ -18,6 +18,9 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        devicesTableView.doubleAction = #selector(tableViewDoubleClick(_:))
+        
         b = BluetoothHelper()
         b?.delegate = self
     }
@@ -32,6 +35,19 @@ class ViewController: NSViewController {
         b?.currentState == BluetoothHelper.State.idle ? b?.scan() : b?.stop()
     }
     
+    func openGymbalView(device:CBPeripheral) {
+        let mainStoryBoard = NSStoryboard(name: "Main", bundle: nil)
+        let windowController = mainStoryBoard.instantiateController(withIdentifier: "GymbalViewController") as! GymbalViewController
+        windowController.setup(device: device)
+        presentAsModalWindow(windowController)
+        windowController.becomeFirstResponder()
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        print("MAIN \(event.keyCode)")
+        
+    }
+    
 }
 
 
@@ -39,17 +55,25 @@ class ViewController: NSViewController {
 
 
 extension ViewController: BluetoothHelperDelegate {
+    
     func bluetoothHelperDidChangeState(sender: BluetoothHelper, state: BluetoothHelper.State) {
         print(state)
     }
     
-    func bluetoothHelperDidDiscoveredDevice(sender: BluetoothHelper, device: BluetoothDevice) {
+    func bluetoothHelperDidDiscoveredDevice(sender: BluetoothHelper, device: CBPeripheral) {
         print("Found \(device.name ?? "Unkown")")
         devicesTableView.reloadData()
     }
     
-    func bluetoothHelperDidDisconverServices(sender: BluetoothHelper, device: BluetoothDevice, services: [CBService]) {
+    func bluetoothHelperDidDiscoverServices(sender: BluetoothHelper, device: CBPeripheral, services: [CBService]) {
         print("\(services.count) Services discovered \(device.name ?? "_")")
+    }
+    
+    func bluetoothHelperDidDiscoverCharacteristics(sender: BluetoothHelper, device: CBPeripheral) {
+        print("Ready!")
+        if (device.name == "Smooth-Q01BC") {
+            openGymbalView(device: device)
+        }
     }
 }
 
@@ -74,7 +98,7 @@ extension ViewController: NSTableViewDataSource, NSTableViewDelegate {
         
         let tableCell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: CellIdentifier.DeviceCell), owner: nil) as! NSTableCellView
         let textField = tableCell.viewWithTag(1) as! NSTextField
-        textField.stringValue = device.name ?? device.uuid
+        textField.stringValue = device.name ?? device.identifier.uuidString
         
         return tableCell
     }
@@ -86,6 +110,10 @@ extension ViewController: NSTableViewDataSource, NSTableViewDelegate {
             else { return }
         
         b?.connect(device: selectedDevice)
+    }
+    
+    @objc func tableViewDoubleClick(_ sender:AnyObject) {
+        
     }
 }
 

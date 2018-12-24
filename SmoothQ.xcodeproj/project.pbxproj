@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA2F699921D0DA8A002892E8 /* SmoothQManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F699821D0DA8A002892E8 /* SmoothQManager.swift */; };
+		EA2F699D21D129CA002892E8 /* BluetoothHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F699C21D129CA002892E8 /* BluetoothHelper.swift */; };
+		EA2F69A221D129F6002892E8 /* GymbalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2F69A121D129F6002892E8 /* GymbalViewController.swift */; };
 		EAE4C98A21D0161B009C200A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4C98921D0161B009C200A /* AppDelegate.swift */; };
 		EAE4C98C21D0161B009C200A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4C98B21D0161B009C200A /* ViewController.swift */; };
 		EAE4C98E21D01622009C200A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE4C98D21D01622009C200A /* Assets.xcassets */; };
 		EAE4C99121D01622009C200A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE4C98F21D01622009C200A /* Main.storyboard */; };
-		EAE4C99A21D01688009C200A /* BluetoothHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4C99921D01688009C200A /* BluetoothHelper.swift */; };
 		EAE4C99E21D016B0009C200A /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE4C99D21D016B0009C200A /* CoreBluetooth.framework */; };
-		EAE4C9A021D01FA3009C200A /* BluetoothDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4C99F21D01FA3009C200A /* BluetoothDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA2F699821D0DA8A002892E8 /* SmoothQManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmoothQManager.swift; sourceTree = "<group>"; };
+		EA2F699C21D129CA002892E8 /* BluetoothHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BluetoothHelper.swift; path = SmoothQ/Bluetooth/BluetoothHelper.swift; sourceTree = SOURCE_ROOT; };
+		EA2F69A121D129F6002892E8 /* GymbalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GymbalViewController.swift; path = SmoothQ/GymbalView/GymbalViewController.swift; sourceTree = SOURCE_ROOT; };
 		EAE4C98621D0161B009C200A /* SmoothQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmoothQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE4C98921D0161B009C200A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE4C98B21D0161B009C200A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,9 +28,7 @@
 		EAE4C99021D01622009C200A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAE4C99221D01622009C200A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAE4C99321D01622009C200A /* SmoothQ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmoothQ.entitlements; sourceTree = "<group>"; };
-		EAE4C99921D01688009C200A /* BluetoothHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothHelper.swift; sourceTree = "<group>"; };
 		EAE4C99D21D016B0009C200A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		EAE4C99F21D01FA3009C200A /* BluetoothDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BluetoothDevice.swift; path = SmoothQ/Bluetooth/BluetoothDevice.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA2F699721D0DA76002892E8 /* Gymbal */ = {
+			isa = PBXGroup;
+			children = (
+				EA2F699821D0DA8A002892E8 /* SmoothQManager.swift */,
+			);
+			path = Gymbal;
+			sourceTree = "<group>";
+		};
+		EA2F69A021D129EA002892E8 /* GymbalView */ = {
+			isa = PBXGroup;
+			children = (
+				EA2F69A121D129F6002892E8 /* GymbalViewController.swift */,
+			);
+			name = GymbalView;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		EAE4C97D21D0161B009C200A = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +80,8 @@
 		EAE4C98821D0161B009C200A /* SmoothQ */ = {
 			isa = PBXGroup;
 			children = (
+				EA2F69A021D129EA002892E8 /* GymbalView */,
+				EA2F699721D0DA76002892E8 /* Gymbal */,
 				EAE4C98921D0161B009C200A /* AppDelegate.swift */,
 				EAE4C98B21D0161B009C200A /* ViewController.swift */,
 				EAE4C98D21D01622009C200A /* Assets.xcassets */,
@@ -75,8 +96,7 @@
 		EAE4C99B21D01692009C200A /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
-				EAE4C99921D01688009C200A /* BluetoothHelper.swift */,
-				EAE4C99F21D01FA3009C200A /* BluetoothDevice.swift */,
+				EA2F699C21D129CA002892E8 /* BluetoothHelper.swift */,
 			);
 			name = Bluetooth;
 			path = "New Group";
@@ -166,9 +186,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAE4C98C21D0161B009C200A /* ViewController.swift in Sources */,
+				EA2F699921D0DA8A002892E8 /* SmoothQManager.swift in Sources */,
+				EA2F699D21D129CA002892E8 /* BluetoothHelper.swift in Sources */,
 				EAE4C98A21D0161B009C200A /* AppDelegate.swift in Sources */,
-				EAE4C9A021D01FA3009C200A /* BluetoothDevice.swift in Sources */,
-				EAE4C99A21D01688009C200A /* BluetoothHelper.swift in Sources */,
+				EA2F69A221D129F6002892E8 /* GymbalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
