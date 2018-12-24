@@ -11,6 +11,9 @@
 		EAE4C98C21D0161B009C200A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4C98B21D0161B009C200A /* ViewController.swift */; };
 		EAE4C98E21D01622009C200A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE4C98D21D01622009C200A /* Assets.xcassets */; };
 		EAE4C99121D01622009C200A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE4C98F21D01622009C200A /* Main.storyboard */; };
+		EAE4C99A21D01688009C200A /* BluetoothHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4C99921D01688009C200A /* BluetoothHelper.swift */; };
+		EAE4C99E21D016B0009C200A /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE4C99D21D016B0009C200A /* CoreBluetooth.framework */; };
+		EAE4C9A021D01FA3009C200A /* BluetoothDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE4C99F21D01FA3009C200A /* BluetoothDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		EAE4C99021D01622009C200A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAE4C99221D01622009C200A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAE4C99321D01622009C200A /* SmoothQ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmoothQ.entitlements; sourceTree = "<group>"; };
+		EAE4C99921D01688009C200A /* BluetoothHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothHelper.swift; sourceTree = "<group>"; };
+		EAE4C99D21D016B0009C200A /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		EAE4C99F21D01FA3009C200A /* BluetoothDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BluetoothDevice.swift; path = SmoothQ/Bluetooth/BluetoothDevice.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAE4C99E21D016B0009C200A /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +46,7 @@
 			children = (
 				EAE4C98821D0161B009C200A /* SmoothQ */,
 				EAE4C98721D0161B009C200A /* Products */,
+				EAE4C99C21D016B0009C200A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,8 +67,27 @@
 				EAE4C98F21D01622009C200A /* Main.storyboard */,
 				EAE4C99221D01622009C200A /* Info.plist */,
 				EAE4C99321D01622009C200A /* SmoothQ.entitlements */,
+				EAE4C99B21D01692009C200A /* Bluetooth */,
 			);
 			path = SmoothQ;
+			sourceTree = "<group>";
+		};
+		EAE4C99B21D01692009C200A /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				EAE4C99921D01688009C200A /* BluetoothHelper.swift */,
+				EAE4C99F21D01FA3009C200A /* BluetoothDevice.swift */,
+			);
+			name = Bluetooth;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		EAE4C99C21D016B0009C200A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAE4C99D21D016B0009C200A /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +122,11 @@
 				TargetAttributes = {
 					EAE4C98521D0161B009C200A = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,6 +167,8 @@
 			files = (
 				EAE4C98C21D0161B009C200A /* ViewController.swift in Sources */,
 				EAE4C98A21D0161B009C200A /* AppDelegate.swift in Sources */,
+				EAE4C9A021D01FA3009C200A /* BluetoothDevice.swift in Sources */,
+				EAE4C99A21D01688009C200A /* BluetoothHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,8 +306,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SmoothQ/SmoothQ.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YZKN7GBSG3;
 				INFOPLIST_FILE = SmoothQ/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -281,6 +317,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "apps-entertainment.mac.SmoothQ";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -290,8 +327,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SmoothQ/SmoothQ.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YZKN7GBSG3;
 				INFOPLIST_FILE = SmoothQ/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -299,6 +338,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "apps-entertainment.mac.SmoothQ";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
