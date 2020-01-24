@@ -11,6 +11,7 @@ import CoreBluetooth
 
 class GimbalViewController: NSViewController {
 
+    @IBOutlet weak var RawCommandTextField: NSTextField!
     var smoothQ:SmoothQManager?
     
     override func viewDidLoad() {
@@ -34,6 +35,22 @@ class GimbalViewController: NSViewController {
         return true
     }
     
+    @IBAction func onFollowingAction(_ sender: Any) {
+        smoothQ?.mode(mode: .Following)
+    }
+    
+    @IBAction func onFollowingPanAction(_ sender: Any) {
+        smoothQ?.mode(mode: .PanFollowing)
+    }
+    
+    @IBAction func onLockingAction(_ sender: Any) {
+        smoothQ?.mode(mode: .Locking)
+    }
+    
+    @IBAction func onRawCMDAction(_ sender: Any) {
+        smoothQ?.write(string: RawCommandTextField.stringValue)
+    }
+    
     override func keyDown(with event: NSEvent) {
         print(event.keyCode)
         switch event.keyCode {
@@ -45,6 +62,12 @@ class GimbalViewController: NSViewController {
             smoothQ?.move(direction: .Left)
         case 124:
             smoothQ?.move(direction: .Right)
+        case 18:
+            smoothQ?.mode(mode: .Following)
+        case 19:
+            smoothQ?.mode(mode: .Locking)
+        case 20:
+            smoothQ?.mode(mode: .PanFollowing)
         default:
             return
             

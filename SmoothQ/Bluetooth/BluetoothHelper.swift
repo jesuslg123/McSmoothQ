@@ -133,7 +133,7 @@ extension BluetoothHelper: CBCentralManagerDelegate, CBPeripheralDelegate {
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        guard let characteristics = service.characteristics else { return }
+        //guard let characteristics = service.characteristics else { return }
         //print(characteristics)
         group.leave()
     }

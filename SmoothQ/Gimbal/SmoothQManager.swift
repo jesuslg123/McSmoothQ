@@ -12,10 +12,17 @@ import CoreBluetooth
 class SmoothQManager {
     
     enum Direction: String {
-        case Up = "0610010ed449e4"
-        case Down = "061001012c37cd"
-        case Left = "061002012c6e9d"
-        case Right = "0610020ed410b4"
+        case Up =       "0610010ed449e4"
+        case Down =     "061001012c37cd"
+        case Left =     "061002012c6e9d"
+        case Right =    "0610020ed410b4"
+    }
+    
+    enum Mode: String {
+        //0601 2700 00B8 67
+        case Locking =      "0681270001757E"
+        case PanFollowing = "068127000065 5F"
+        case Following =    "0681270002451D"
     }
     
     let device:CBPeripheral
@@ -42,14 +49,26 @@ class SmoothQManager {
         
     }
     
+    func mode(mode: Mode) {
+        print("\(device.name ?? "Unknown") - MODE \(mode)")
+        
+        write(string: mode.rawValue)
+    }
+    
     func move(direction:Direction) {
         print("\(device.name ?? "Unknown") - MOVE \(direction)")
+        
+        write(string: direction.rawValue)
+    }
+    
+    func write(string: String) {
+        print("\(device.name ?? "Unknown") - Write: \(string)")
         
         guard let service = device.services?[2] else { return }
         guard let characteristic = service.characteristics?[0] else { return }
 
         DispatchQueue.global(qos: .background).async {
-            self.write(characteristic: characteristic, data: direction.rawValue.hexadecimal!)
+            self.write(characteristic: characteristic, data: string.hexadecimal!)
         }
     }
     
